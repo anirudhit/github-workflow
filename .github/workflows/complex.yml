@@ -1,0 +1,35 @@
+name: Complex
+on:
+  push:
+    branches: ["master"]
+jobs:
+  job1:
+    name: Run on ubuntu1
+    runs-on: ubuntu-latest
+    steps:
+    - uses: action/checkout@v3
+    - name: Print the date
+    - run: date
+  job2:
+    name: Run on windows
+    runs-on: windows-latest
+    steps:
+    - uses: action/checkout@v3
+    - name: Print the date
+    - shell: pwsh
+    - run: date
+  job3:
+    name: Run on mac
+    runs-on: macos-latest
+    steps:
+    - uses: action/checkout@v3
+    - name: Print the date
+    - run: date
+  job4:
+    name: Run on ubuntu2
+    needs: [job1, job2, job3]
+    runs-on: ubuntu-latest
+    steps:
+    - uses: action/checkout@v3
+    - name: Print the date
+    - run: date
