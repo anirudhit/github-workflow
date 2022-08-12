@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Print date
-      - run: date
+        run: date
   job2:
     name: Run on windows
     runs-on: windows-latest
