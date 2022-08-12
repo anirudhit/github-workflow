@@ -8,14 +8,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: action/checkout@v3
-      - name: Print the date
       - run: date
   job2:
     name: Run on windows
     runs-on: windows-latest
     steps:
       - uses: action/checkout@v3
-      - name: Print the date
       - shell: pwsh
       - run: date
   job3:
@@ -23,7 +21,6 @@ jobs:
     runs-on: macos-latest
     steps:
       - uses: action/checkout@v3
-      - name: Print the date
       - run: date
   job4:
     name: Run on ubuntu2
@@ -31,5 +28,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: action/checkout@v3
-      - name: Print the date
       - run: date
